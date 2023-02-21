@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import AllReservation from "../AllRese/AllRese";
 import "./App.css";
 
 class App extends Component {
@@ -9,6 +10,7 @@ class App extends Component {
         <div className="resy-form"></div>
         <div className="resy-container">
           <p>hello world</p>
+          <AllReservation />
         </div>
       </div>
     );
