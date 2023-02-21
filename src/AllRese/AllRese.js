@@ -45,7 +45,7 @@ const AllReservation = () => {
     });
     return displayAllRese;
   };
-  return <div className="card-display">{displayReservation()}</div>;
+  return <div className="">{displayReservation()}</div>;
 };
 
 export default AllReservation;

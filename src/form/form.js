@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./Form.css";
 
-const Form = () => {
-  //usestate input field
+const Form = (props) => {
+  //useState input field
   const [inputInfo, SetInputInfo] = useState({
     name: "",
     date: "",
@@ -11,6 +11,18 @@ const Form = () => {
   });
   const handleChange = (event) => {
     SetInputInfo({ ...inputInfo, [event.target.name]: event.target.value });
+  };
+  const submitReservation = (event) => {
+    event.preventDefault();
+    const newRes = {
+      id: Date.now(),
+      ...inputInfo,
+    };
+    props.addReservation(newRes);
+    clearInputs();
+  };
+  const clearInputs = () => {
+    SetInputInfo({ name: "", date: "", reserveTime: "", numGuest: "" });
   };
 
   return (
@@ -39,7 +51,9 @@ const Form = () => {
         placeholder="Number of guests"
         onChange={(event) => handleChange(event)}
       ></input>
-      <button>Make Reservation</button>
+      <button onClick={(event) => submitReservation(event)}>
+        Make Reservation
+      </button>
     </form>
   );
 };
