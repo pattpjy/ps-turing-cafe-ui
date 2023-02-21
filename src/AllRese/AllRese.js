@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./AllRese.css";
+import Card from "../Card/Card";
 
 // display all reservation
 //need to fetch data from API
@@ -34,6 +35,7 @@ const AllReservation = () => {
     const displayAllRese = allReservation.map((reserve) => {
       return (
         <Card
+          key={reserve.id}
           name={reserve.name}
           date={reserve.date}
           reserveTime={reserve.time}
@@ -41,8 +43,9 @@ const AllReservation = () => {
         />
       );
     });
+    return displayAllRese;
   };
-  return <div></div>;
+  return <div className="card-display">{displayReservation()}</div>;
 };
 
 export default AllReservation;
