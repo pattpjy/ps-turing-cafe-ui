@@ -1,8 +1,10 @@
 .card {
-  font-family: inherit;
-  border: solid 2px teal;
+  border: solid 5px teal;
+  color: teal;
+  font-size: medium;
   border-radius: 5px;
-  background-color: aliceblue;
+  background-color: white;
   width: 400 px;
   padding: 40px 40px 10px 40px;
+  margin: 10px;
 }
