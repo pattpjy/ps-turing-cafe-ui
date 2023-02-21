@@ -4,6 +4,7 @@ import "./AllRese.css";
 // display all reservation
 //need to fetch data from API
 //create Api call file
+//function to display allReservation
 //will need reservation detail card as a child component
 
 const AllReservation = () => {
@@ -27,7 +28,20 @@ const AllReservation = () => {
     }
     fetchData();
   }, []);
+  //function to display Reservation
 
+  const displayReservation = () => {
+    const displayAllRese = allReservation.map((reserve) => {
+      return (
+        <Card
+          name={reserve.name}
+          date={reserve.date}
+          reserveTime={reserve.time}
+          numGuest={reserve.number}
+        />
+      );
+    });
+  };
   return <div></div>;
 };
 
