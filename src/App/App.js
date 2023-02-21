@@ -4,6 +4,17 @@ import "./App.css";
 import Form from "../form/Form";
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      reservationDisplay: [],
+    };
+  }
+
+  addReservation = (newRes) => {
+    const addRes = [...this.reservationDisplay, newRes];
+    this.setState({ reservationDisplay: addRes });
+  };
   render() {
     return (
       <div className="App">
